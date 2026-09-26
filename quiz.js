@@ -168,3 +168,44 @@ function showResults() {
 }
 
 initQuiz();
+
+function showReview() {
+    resultsScreen.classList.remove('active');
+    document.getElementById('reviewScreen').style.display = 'block';
+    const reviewContent = document.getElementById('reviewContent');
+    reviewContent.innerHTML = '';
+
+    questions.forEach((q, index) => {
+        const userAnswer = userAnswers[index];
+        const isCorrect = userAnswer === q.answer;
+
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'review-item';
+        
+        const qTitle = document.createElement('div');
+        qTitle.className = 'review-question';
+        qTitle.innerHTML = `<strong>${q.question}</strong>`;
+        itemDiv.appendChild(qTitle);
+
+        q.options.forEach((opt, optIndex) => {
+            const optDiv = document.createElement('div');
+            optDiv.className = 'review-option';
+            
+            // Format option text
+            let optText = String.fromCharCode(65 + optIndex) + '. ' + opt;
+            
+            if (optIndex === q.answer) {
+                optDiv.classList.add('correct-answer');
+                optText += ' ✓ (Đáp án đúng)';
+            } else if (optIndex === userAnswer) {
+                optDiv.classList.add('wrong-answer');
+                optText += ' ✗ (Bạn đã chọn)';
+            }
+
+            optDiv.textContent = optText;
+            itemDiv.appendChild(optDiv);
+        });
+
+        reviewContent.appendChild(itemDiv);
+    });
+}

@@ -40,7 +40,12 @@
         <ul>
             <li><code>&lt;!DOCTYPE html&gt;</code>: Không hẳn là một thẻ HTML, đây là một khai báo. Nó báo cho trình duyệt (Chrome, Safari) biết rằng trang web này đang sử dụng chuẩn HTML5 mới nhất.</li>
             <li><code>&lt;html&gt;</code>: Thẻ gốc (root) bao bọc toàn bộ mã của trang web. Thuộc tính <code>lang="vi"</code> xác định ngôn ngữ chính là tiếng Việt, giúp trình đọc màn hình hoặc Google Dịch hoạt động tốt hơn.</li>
-            <li><code>&lt;head&gt;</code>: Nơi chứa các thông tin <strong>cài đặt ngầm</strong> (Metadata). Những gì nằm trong <code>&lt;head&gt;</code> sẽ <strong>không hiển thị trực tiếp</strong> ra màn hình người dùng, ngoại trừ <code>&lt;title&gt;</code> sẽ hiển thị ở thẻ (tab) của trình duyệt. <code>&lt;meta charset="UTF-8"&gt;</code> là bắt buộc để hiển thị tiếng Việt có dấu.</li>
+            <li><code>&lt;head&gt;</code>: Nơi chứa các thông tin <strong>cài đặt ngầm</strong> (Metadata). Những gì nằm trong <code>&lt;head&gt;</code> sẽ <strong>không hiển thị trực tiếp</strong> ra màn hình người dùng, ngoại trừ <code>&lt;title&gt;</code> sẽ hiển thị ở thẻ (tab) của trình duyệt. Các thẻ quan trọng trong head:
+                <br> - <code>&lt;meta charset="UTF-8"&gt;</code>: Bắt buộc để hiển thị tiếng Việt có dấu.
+                <br> - <code>&lt;meta name="viewport" ...&gt;</code>: Giúp trang web tự động co giãn vừa vặn với màn hình điện thoại (Responsive).
+                <br> - <code>&lt;title&gt;</code>: Xác định tên trang web hiển thị trên thẻ (tab) của trình duyệt.
+                <br> - <code>&lt;link rel="stylesheet" href="..."&gt;</code>: Dùng để tải và liên kết file CSS vào file HTML.
+            </li>
             <li><code>&lt;body&gt;</code>: Đây là phần quan trọng nhất. <strong>Toàn bộ nội dung mà người dùng nhìn thấy</strong> (văn bản, hình ảnh, video, nút bấm) đều phải nằm trong cặp thẻ <code>&lt;body&gt;</code> và <code>&lt;/body&gt;</code>.</li>
         </ul>
 
@@ -51,6 +56,7 @@
             <li><code>&lt;b&gt;</code> hoặc <code>&lt;strong&gt;</code>: Làm in đậm chữ. Tuy nhiên, <code>&lt;strong&gt;</code> mang ý nghĩa nhấn mạnh tầm quan trọng hơn đối với các công cụ đọc màn hình.</li>
             <li><code>&lt;i&gt;</code> hoặc <code>&lt;em&gt;</code>: Làm in nghiêng chữ.</li>
             <li><code>&lt;br&gt;</code>: Line break. Ép chữ xuống dòng ngay lập tức mà không cần tạo đoạn văn mới.</li>
+            <li><code>&lt;hr&gt;</code>: Tạo ra một đường kẻ ngang trên trang web, dùng để phân cách các phần nội dung.</li>
         </ul>
 
         <h3>Liên kết (Links) và Hình ảnh (Images)</h3>
@@ -65,6 +71,7 @@
             - <code>src</code> (source) chỉ định đường dẫn tải ảnh.<br>
             - <code>alt</code> (alternative text) cực kỳ quan trọng: Nó chứa văn bản mô tả bức ảnh. Nếu ảnh bị lỗi không tải được, dòng chữ này sẽ hiện ra. Nó cũng giúp Google hiểu bức ảnh nói về cái gì.
             </li>
+            <li><strong>Thẻ video <code>&lt;video&gt;</code>:</strong> Dùng để nhúng một đoạn video vào trang web. Có thể thêm thuộc tính <code>controls</code> để hiển thị nút Play/Pause.</li>
         </ul>
 
         <h3>Phân chia cấu trúc và Bố cục</h3>
@@ -82,12 +89,14 @@
         </ul>
 
         <h3>Bảng Dữ Liệu (Tables)</h3>
-        <p>Bảng được xây dựng theo từng <strong>Hàng (Row)</strong> trước, sau đó mới chia thành các <strong>Cột/Ô</strong> trong hàng đó.</p>
+        <p>Bảng được xây dựng theo nguyên tắc: tạo <strong>Hàng (Row)</strong> trước, sau đó mới nhét các <strong>Cột/Ô</strong> vào trong hàng đó. Số lượng ô trong một hàng sẽ tự động tạo thành số lượng cột của bảng.</p>
         <ul>
             <li><code>&lt;table&gt;</code>: Khai báo bắt đầu một bảng.</li>
             <li><code>&lt;tr&gt;</code> (Table Row): Tạo ra một hàng mới ngang qua bảng.</li>
             <li><code>&lt;th&gt;</code> (Table Heading): Ô tiêu đề (chữ sẽ in đậm và tự động căn giữa). Nằm trong <code>&lt;tr&gt;</code>.</li>
             <li><code>&lt;td&gt;</code> (Table Data): Ô chứa dữ liệu bình thường. Nằm trong <code>&lt;tr&gt;</code>.</li>
+            <li><strong>Gộp cột (colspan):</strong> Khi bạn muốn một ô chiếm diện tích của 2 hay nhiều cột gộp lại (giống Merge Cells trong Excel), bạn dùng thuộc tính <code>colspan</code>. Ví dụ: <code>&lt;td colspan="2"&gt;</code>.</li>
+            <li><strong>Gộp hàng (rowspan):</strong> Tương tự, nếu bạn muốn một ô chiếm diện tích của nhiều hàng xếp dọc, bạn dùng thuộc tính <code>rowspan</code>. Ví dụ: <code>&lt;td rowspan="2"&gt;</code>.</li>
         </ul>
 
         <h3>Biểu mẫu (Forms) và Nhập liệu</h3>
@@ -116,6 +125,7 @@
         <h3>Cú pháp và Box Model</h3>
         <ul>
             <li><code>*</code>: Bộ chọn toàn cục, áp dụng cho tất cả các thẻ có trên trang.</li>
+            <li><strong>Bộ chọn ID và Class:</strong> Trong CSS, để chọn một phần tử theo ID (ví dụ: <code>id="header"</code>), ta dùng dấu thăng <code>#header</code>. Để chọn theo Class (ví dụ: <code>class="menu"</code>), ta dùng dấu chấm <code>.menu</code>.</li>
             <li><code>margin</code> và <code>padding</code>: <code>margin</code> tạo khoảng cách bên ngoài phần tử, còn <code>padding</code> tạo khoảng trống bên trong phần tử (giữa viền và nội dung).</li>
             <li><code>box-sizing: border-box;</code>: Thuộc tính này rất quan trọng, nó giúp việc định cỡ thẻ linh hoạt hơn, thẻ không bị phình to ra khi chúng ta thêm padding hoặc viền.</li>
         </ul>
@@ -125,9 +135,14 @@
             <li><code>color</code>: Đổi màu chữ. <code>background-color</code>: Đổi màu nền.</li>
             <li><code>font-size</code>: Thay đổi kích thước chữ.</li>
             <li><code>text-align: center;</code>: Căn giữa đoạn văn bản.</li>
-            <li><code>display: flex;</code>: Bật chế độ Flexbox, một công cụ vô cùng mạnh mẽ để sắp xếp các phần tử trên trang. Chúng ta thường dùng kèm với <code>justify-content</code> và <code>align-items</code> để căn lề.</li>
+            <li><code>text-decoration: none;</code>: Xóa bỏ dấu gạch chân mặc định (rất hay dùng cho thẻ liên kết <code>&lt;a&gt;</code>).</li>
+            <li><code>display: flex;</code>: Bật chế độ Flexbox, một công cụ vô cùng mạnh mẽ để sắp xếp các phần tử trên trang. Flexbox có 2 trục căn chỉnh:
+                <br> - <code>justify-content: center;</code>: Dùng để căn các phần tử vào giữa theo <strong>trục chính</strong> (mặc định là nằm ngang).
+                <br> - <code>align-items: center;</code>: Dùng để căn các phần tử vào giữa theo <strong>trục phụ</strong> (mặc định là trục dọc, cắt ngang trục chính).
+            </li>
             <li><code>border-radius</code>: Bo tròn các góc vuông của phần tử.</li>
             <li><code>box-shadow</code>: Tạo hiệu ứng đổ bóng.</li>
+            <li><code>z-index</code>: Thuộc tính xác định thứ tự lớp chồng lên nhau trong không gian 3 chiều. Số càng lớn thì càng nằm đè lên trên các phần tử khác.</li>
         </ul>
 
         <h3>Các trạng thái đặc biệt</h3>

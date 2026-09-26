@@ -50,10 +50,20 @@
                     Bạn đã trả lời đúng <strong id="correctCount">0</strong> / 50 câu.
                 </div>
                 
-                <div class="nav-buttons" style="justify-content: center; gap: 1rem;">
+                <div class="nav-buttons" style="justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <button class="btn-nav" onclick="showReview()">Xem Đáp Án</button>
                     <button class="btn-nav" onclick="location.reload()">Làm Lại Bài</button>
                     <a href="index.html" class="btn-nav" style="text-decoration: none; display: flex; align-items: center;">Về Lý Thuyết</a>
                 </div>
+            </div>
+
+            <!-- Review Screen -->
+            <div id="reviewScreen" class="review-container">
+                <div class="quiz-header">
+                    <h2>Chi Tiết Đáp Án</h2>
+                    <button class="btn-nav" onclick="location.reload()" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Làm Lại</button>
+                </div>
+                <div id="reviewContent"></div>
             </div>
 
         </div>
