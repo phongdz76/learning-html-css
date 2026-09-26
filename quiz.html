@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trắc Nghiệm HTML & CSS (50 Câu)</title>
+    <meta name="description" content="Bài kiểm tra trắc nghiệm HTML & CSS với 50 câu hỏi.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content-wrapper">
+            
+            <!-- Quiz Screen -->
+            <div id="quizScreen">
+                <div class="quiz-header">
+                    <h2>Kiểm Tra Kiến Thức</h2>
+                    <span id="questionCount" class="score-label">Câu 1 / 50</span>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+
+                <div id="questionContainer" class="question-container active">
+                    <div class="question-text" id="questionText">Đang tải câu hỏi...</div>
+                    <div class="options-grid" id="optionsGrid">
+                        <!-- Options will be injected here by JS -->
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="btn-nav" id="btnPrev" disabled>Quay lại</button>
+                    <button class="btn-nav" id="btnNext" disabled>Tiếp theo</button>
+                </div>
+            </div>
+
+            <!-- Results Screen -->
+            <div id="resultsScreen" class="results-container">
+                <h2>Kết Quả Của Bạn</h2>
+                
+                <div class="score-circle">
+                    <div class="score-text" id="scoreText">0</div>
+                    <div class="score-label">điểm</div>
+                </div>
+                
+                <div class="feedback-text" id="feedbackText">Hãy cố gắng hơn nhé!</div>
+                
+                <div style="color: var(--text-muted); margin-bottom: 2rem;">
+                    Bạn đã trả lời đúng <strong id="correctCount">0</strong> / 50 câu.
+                </div>
+                
+                <div class="nav-buttons" style="justify-content: center; gap: 1rem;">
+                    <button class="btn-nav" onclick="location.reload()">Làm Lại Bài</button>
+                    <a href="index.html" class="btn-nav" style="text-decoration: none; display: flex; align-items: center;">Về Lý Thuyết</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lý thuyết HTML và CSS cơ bản</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kiến Thức Trọng Tâm: HTML & CSS</h1>
+        <p>Trước khi bắt đầu làm bài trắc nghiệm, chúng ta sẽ cùng ôn lại các kiến thức cơ bản về HTML và CSS. Phần này sẽ đi sâu vào cấu trúc cốt lõi của HTML để bạn hiểu tường tận bản chất của nó.</p>
+
+        <!-- PHẦN 1: HTML CHI TIẾT -->
+        <h2>1. HTML - Xây Dựng Cấu Trúc Trang Web</h2>
+        <p><strong>HTML (HyperText Markup Language)</strong> là "Ngôn ngữ đánh dấu siêu văn bản". Xin lưu ý, HTML không phải là ngôn ngữ lập trình (vì nó không có các biến, vòng lặp hay logic toán học), mà nó là ngôn ngữ dùng để mô tả cấu trúc của một trang web.</p>
+        <p>Nếu ví trang web như một ngôi nhà, HTML chính là phần khung thô (cột, tường, nền móng). Nó quy định đâu là tiêu đề, đâu là đoạn văn, đâu là hình ảnh và đâu là nút bấm.</p>
+
+        <h3>Cấu trúc cơ bản của một "Thẻ" (Tag)</h3>
+        <p>Mọi thứ trong HTML đều được xây dựng từ các <strong>Thẻ (Tags)</strong>. Cấu trúc điển hình của một thẻ bao gồm:</p>
+        <pre><code>&lt;tên_thẻ thuộc_tính="giá_trị"&gt; Nội dung hiển thị &lt;/tên_thẻ&gt;</code></pre>
+        <ul>
+            <li><strong>Thẻ mở:</strong> Bắt đầu bằng <code>&lt;</code> và kết thúc bằng <code>&gt;</code>.</li>
+            <li><strong>Thẻ đóng:</strong> Có thêm dấu gạch chéo <code>/</code>, ví dụ: <code>&lt;/p&gt;</code>, <code>&lt;/div&gt;</code>. (Một số thẻ đặc biệt không cần thẻ đóng như <code>&lt;img&gt;</code> hay <code>&lt;br&gt;</code>).</li>
+            <li><strong>Thuộc tính (Attributes):</strong> Cung cấp thêm thông tin cho thẻ (nằm bên trong thẻ mở). Ví dụ: <code>href</code> trong thẻ link, <code>src</code> trong thẻ ảnh.</li>
+        </ul>
+
+        <h3>Bộ khung chuẩn của một tài liệu HTML</h3>
+        <p>Mọi trang web trên thế giới đều bắt đầu bằng bộ khung cố định sau đây:</p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Tiêu đề trang&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    Nội dung trang web nằm ở đây...
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <ul>
+            <li><code>&lt;!DOCTYPE html&gt;</code>: Không hẳn là một thẻ HTML, đây là một khai báo. Nó báo cho trình duyệt (Chrome, Safari) biết rằng trang web này đang sử dụng chuẩn HTML5 mới nhất.</li>
+            <li><code>&lt;html&gt;</code>: Thẻ gốc (root) bao bọc toàn bộ mã của trang web. Thuộc tính <code>lang="vi"</code> xác định ngôn ngữ chính là tiếng Việt, giúp trình đọc màn hình hoặc Google Dịch hoạt động tốt hơn.</li>
+            <li><code>&lt;head&gt;</code>: Nơi chứa các thông tin <strong>cài đặt ngầm</strong> (Metadata). Những gì nằm trong <code>&lt;head&gt;</code> sẽ <strong>không hiển thị trực tiếp</strong> ra màn hình người dùng, ngoại trừ <code>&lt;title&gt;</code> sẽ hiển thị ở thẻ (tab) của trình duyệt. <code>&lt;meta charset="UTF-8"&gt;</code> là bắt buộc để hiển thị tiếng Việt có dấu.</li>
+            <li><code>&lt;body&gt;</code>: Đây là phần quan trọng nhất. <strong>Toàn bộ nội dung mà người dùng nhìn thấy</strong> (văn bản, hình ảnh, video, nút bấm) đều phải nằm trong cặp thẻ <code>&lt;body&gt;</code> và <code>&lt;/body&gt;</code>.</li>
+        </ul>
+
+        <h3>Các thẻ xử lý Văn Bản (Text)</h3>
+        <ul>
+            <li><code>&lt;h1&gt;</code> đến <code>&lt;h6&gt;</code>: Heading (Tiêu đề). <code>&lt;h1&gt;</code> là lớn nhất và quan trọng nhất. Mỗi trang web chỉ nên có duy nhất một thẻ <code>&lt;h1&gt;</code> để tốt cho SEO (Tối ưu hóa công cụ tìm kiếm). Các tiêu đề nhỏ hơn sẽ dùng H2, H3...</li>
+            <li><code>&lt;p&gt;</code>: Paragraph (Đoạn văn). Các đoạn văn sẽ tự động được cách nhau bởi khoảng trống trên và dưới.</li>
+            <li><code>&lt;b&gt;</code> hoặc <code>&lt;strong&gt;</code>: Làm in đậm chữ. Tuy nhiên, <code>&lt;strong&gt;</code> mang ý nghĩa nhấn mạnh tầm quan trọng hơn đối với các công cụ đọc màn hình.</li>
+            <li><code>&lt;i&gt;</code> hoặc <code>&lt;em&gt;</code>: Làm in nghiêng chữ.</li>
+            <li><code>&lt;br&gt;</code>: Line break. Ép chữ xuống dòng ngay lập tức mà không cần tạo đoạn văn mới.</li>
+        </ul>
+
+        <h3>Liên kết (Links) và Hình ảnh (Images)</h3>
+        <ul>
+            <li><strong>Thẻ liên kết <code>&lt;a&gt;</code> (Anchor):</strong> Dùng để tạo các đường link.<br>
+            Ví dụ: <code>&lt;a href="https://google.com" target="_blank"&gt;Nhấn vào đây&lt;/a&gt;</code><br>
+            - <code>href</code> là thuộc tính chứa địa chỉ URL.<br>
+            - <code>target="_blank"</code> là thuộc tính giúp mở link đó sang một tab mới (không làm mất trang hiện tại).
+            </li>
+            <li><strong>Thẻ hình ảnh <code>&lt;img&gt;</code>:</strong> Là thẻ tự đóng (không có <code>&lt;/img&gt;</code>).<br>
+            Ví dụ: <code>&lt;img src="logo.png" alt="Ảnh Logo công ty"&gt;</code><br>
+            - <code>src</code> (source) chỉ định đường dẫn tải ảnh.<br>
+            - <code>alt</code> (alternative text) cực kỳ quan trọng: Nó chứa văn bản mô tả bức ảnh. Nếu ảnh bị lỗi không tải được, dòng chữ này sẽ hiện ra. Nó cũng giúp Google hiểu bức ảnh nói về cái gì.
+            </li>
+        </ul>
+
+        <h3>Phân chia cấu trúc và Bố cục</h3>
+        <ul>
+            <li><code>&lt;div&gt;</code>: Là một thẻ Block (chiếm toàn bộ chiều ngang của trang). Được sử dụng cực kỳ nhiều để tạo các "khối", "hộp" chứa các phần tử khác lại với nhau để dễ dàng dàn bố cục.</li>
+            <li><code>&lt;span&gt;</code>: Là một thẻ Inline (chỉ chiếm diện tích đúng bằng nội dung của nó). Dùng để bọc một đoạn chữ nhỏ bên trong một câu để đổi màu đoạn chữ đó, mà không làm đoạn chữ bị rớt xuống dòng.</li>
+            <li><strong>Các thẻ Semantics (Ngữ nghĩa):</strong> Thay vì dùng hàng chục thẻ <code>&lt;div&gt;</code> vô hồn, HTML5 tạo ra các thẻ có ý nghĩa rõ ràng như: <code>&lt;header&gt;</code> (Phần đầu trang), <code>&lt;footer&gt;</code> (Phần chân trang), <code>&lt;main&gt;</code> (Nội dung chính), <code>&lt;section&gt;</code> (Từng phần nội dung riêng biệt), <code>&lt;nav&gt;</code> (Khu vực thanh điều hướng).</li>
+        </ul>
+
+        <h3>Danh sách (Lists)</h3>
+        <ul>
+            <li><code>&lt;ul&gt;</code> (Unordered List): Tạo danh sách không theo thứ tự (các đầu mục có dấu chấm tròn).</li>
+            <li><code>&lt;ol&gt;</code> (Ordered List): Tạo danh sách có thứ tự (đánh số 1, 2, 3...).</li>
+            <li><code>&lt;li&gt;</code> (List item): Là phần tử con <strong>bắt buộc</strong> phải nằm bên trong <code>&lt;ul&gt;</code> hoặc <code>&lt;ol&gt;</code>.</li>
+        </ul>
+
+        <h3>Bảng Dữ Liệu (Tables)</h3>
+        <p>Bảng được xây dựng theo từng <strong>Hàng (Row)</strong> trước, sau đó mới chia thành các <strong>Cột/Ô</strong> trong hàng đó.</p>
+        <ul>
+            <li><code>&lt;table&gt;</code>: Khai báo bắt đầu một bảng.</li>
+            <li><code>&lt;tr&gt;</code> (Table Row): Tạo ra một hàng mới ngang qua bảng.</li>
+            <li><code>&lt;th&gt;</code> (Table Heading): Ô tiêu đề (chữ sẽ in đậm và tự động căn giữa). Nằm trong <code>&lt;tr&gt;</code>.</li>
+            <li><code>&lt;td&gt;</code> (Table Data): Ô chứa dữ liệu bình thường. Nằm trong <code>&lt;tr&gt;</code>.</li>
+        </ul>
+
+        <h3>Biểu mẫu (Forms) và Nhập liệu</h3>
+        <p>Dùng để lấy thông tin từ người dùng (Đăng nhập, Đăng ký).</p>
+        <ul>
+            <li><code>&lt;form&gt;</code>: Bao bọc toàn bộ khu vực nhập liệu.</li>
+            <li><code>&lt;input type="text"&gt;</code>: Tạo một ô nhập chữ bình thường.</li>
+            <li><code>&lt;input type="password"&gt;</code>: Tạo ô nhập mật khẩu (gõ đến đâu ra dấu * đến đó).</li>
+            <li><code>&lt;input type="radio"&gt;</code>: Tạo ô chọn hình tròn (chỉ được chọn 1 trong nhóm). Mẹo: Để nhóm nhiều nút radio lại với nhau (để nó biết mà chỉ cho phép chọn 1), ta gán cho chúng chung một thuộc tính <code>name</code>.</li>
+            <li><code>&lt;input type="checkbox"&gt;</code>: Tạo ô chọn hình vuông (cho phép chọn nhiều).</li>
+            <li><code>&lt;button&gt;</code>: Tạo nút bấm gửi dữ liệu.</li>
+        </ul>
+
+        <h3>Hai thuộc tính Toàn Cục quan trọng: ID và Class</h3>
+        <p>Đây là 2 thuộc tính đóng vai trò "cầu nối" để HTML giao tiếp với CSS và JavaScript.</p>
+        <ul>
+            <li><strong>Thuộc tính ID (<code>id="tieu-de-chinh"</code>):</strong> Tính duy nhất. Giống như số Chứng Minh Nhân Dân. Mỗi ID chỉ được xuất hiện <strong>1 lần duy nhất</strong> trên toàn bộ trang. Dùng để xác định một phần tử cực kỳ cụ thể (thường dùng nhiều trong JavaScript).</li>
+            <li><strong>Thuộc tính Class (<code>class="nut-bam-xanh"</code>):</strong> Tính tái sử dụng. Giống như áo đồng phục. Nhiều phần tử khác nhau có thể sử dụng <strong>chung 1 class</strong>. Khi dùng CSS để trang trí cho class này, tất cả phần tử có class đó sẽ cùng thay đổi giao diện giống nhau.</li>
+        </ul>
+
+
+        <!-- PHẦN 2: CSS -->
+        <h2 style="margin-top: 3rem;">2. CSS - Định dạng và làm đẹp trang web</h2>
+        <p>CSS (Cascading Style Sheets) là ngôn ngữ dùng để trang trí cho HTML. Nếu HTML là bộ khung, thì CSS chính là màu sơn, nội thất giúp trang web trở nên sinh động và đẹp mắt hơn.</p>
+
+        <h3>Cú pháp và Box Model</h3>
+        <ul>
+            <li><code>*</code>: Bộ chọn toàn cục, áp dụng cho tất cả các thẻ có trên trang.</li>
+            <li><code>margin</code> và <code>padding</code>: <code>margin</code> tạo khoảng cách bên ngoài phần tử, còn <code>padding</code> tạo khoảng trống bên trong phần tử (giữa viền và nội dung).</li>
+            <li><code>box-sizing: border-box;</code>: Thuộc tính này rất quan trọng, nó giúp việc định cỡ thẻ linh hoạt hơn, thẻ không bị phình to ra khi chúng ta thêm padding hoặc viền.</li>
+        </ul>
+        
+        <h3>Màu sắc, Font chữ và Bố cục</h3>
+        <ul>
+            <li><code>color</code>: Đổi màu chữ. <code>background-color</code>: Đổi màu nền.</li>
+            <li><code>font-size</code>: Thay đổi kích thước chữ.</li>
+            <li><code>text-align: center;</code>: Căn giữa đoạn văn bản.</li>
+            <li><code>display: flex;</code>: Bật chế độ Flexbox, một công cụ vô cùng mạnh mẽ để sắp xếp các phần tử trên trang. Chúng ta thường dùng kèm với <code>justify-content</code> và <code>align-items</code> để căn lề.</li>
+            <li><code>border-radius</code>: Bo tròn các góc vuông của phần tử.</li>
+            <li><code>box-shadow</code>: Tạo hiệu ứng đổ bóng.</li>
+        </ul>
+
+        <h3>Các trạng thái đặc biệt</h3>
+        <ul>
+            <li><code>:hover</code>: Hiệu ứng xảy ra khi người dùng di chuột lên trên phần tử (thường dùng làm đổi màu nút bấm).</li>
+            <li><code>:active</code>: Hiệu ứng xảy ra ngay tại thời điểm người dùng nhấn chuột (click) vào phần tử.</li>
+        </ul>
+
+        <div style="text-align: center; margin-top: 4rem; background: #f8fafc; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+            <p style="font-size: 1.15rem; margin-bottom: 1rem; font-weight: 600;">Bạn đã sẵn sàng làm bài kiểm tra chưa?</p>
+            <p style="color: #64748b; margin-bottom: 1.5rem;">Bài trắc nghiệm gồm 50 câu hỏi (35 câu về HTML, 15 câu về CSS) sẽ giúp bạn ôn tập lại chính xác những gì vừa học.</p>
+            
+            <a href="quiz.html" class="btn">Bắt Đầu Làm Trắc Nghiệm</a>
+        </div>
+    </div>
+</body>
+</html>
